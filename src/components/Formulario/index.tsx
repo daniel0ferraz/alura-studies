@@ -1,10 +1,11 @@
 import React from 'react';
 import Botao from '../Botao';
+import style from './Formulario.module.scss';
 
 export default function Formulario() {
   return (
-    <form>
-      <div className="">
+    <form className={style.novaTarefa}>
+      <div className={style.inputContainer}>
         <label htmlFor="tarefa">Adicione um novo estudo</label>
         <input
           type="text"
@@ -14,8 +15,7 @@ export default function Formulario() {
           required
         />
       </div>
-
-      <div className="">
+      <div className={style.inputContainer}>
         <label htmlFor="tempo">Tempo</label>
         <input
           type="time"
@@ -23,11 +23,10 @@ export default function Formulario() {
           name="tempo"
           id="tempo"
           min="00:00:00"
-          max="01:30"
+          max="01:30:00"
           required
         />
       </div>
-
       <Botao />
     </form>
   );

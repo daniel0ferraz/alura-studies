@@ -1,5 +1,6 @@
 import React from 'react';
+import style from './Botao.module.scss';
 
 export default function Botao() {
-  return <button>Botão</button>;
+  return <button className={style.botao}>Botão</button>;
 }
