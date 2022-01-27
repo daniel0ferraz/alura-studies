@@ -3,6 +3,7 @@ import style from './Botao.module.scss';
 
 type Props = {
   children?: React.ReactNode;
+  type?: 'button' | 'submit' | 'reset' | undefined;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export default function Botao({ children }: Props) {
