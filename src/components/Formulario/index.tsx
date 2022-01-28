@@ -26,7 +26,7 @@ export default function Formulario({ setTarefas }: SetTarefas) {
         id: uuidv4(),
       },
     ]);
-    console.log('event', { tarefa, tempo }, reset);
+    // console.log('event', { tarefa, tempo }, reset);
     setReset({ tarefa: '', tempo: '' });
   };
 
