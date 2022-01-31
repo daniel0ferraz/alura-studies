@@ -19,11 +19,30 @@ function App() {
     );
   }
 
+  function finalizarTarefa() {
+    if (selected) {
+      setSelected(undefined);
+      setTarefas((tarefasAnteriores) =>
+        tarefasAnteriores.map((tarefa) => {
+          if (tarefa.id === selected.id) {
+            return {
+              ...tarefa,
+              selecionado: false,
+              completado: true,
+            };
+          }
+
+          return tarefa;
+        })
+      );
+    }
+  }
+
   return (
     <div className={style.AppStyle}>
       <Formulario setTarefas={setTarefas} />
       <Lista tarefas={tarefas} selecionaTarefa={selecionaTarefa} />
-      <Cronometro selected={selected} />
+      <Cronometro selected={selected} finalizarTarefa={finalizarTarefa} />
     </div>
   );
 }

@@ -10,9 +10,8 @@ type SetTarefas = {
 };
 
 export default function Formulario({ setTarefas }: SetTarefas) {
-  const [tempo, setTempo] = useState('');
+  const [tempo, setTempo] = useState('00:00');
   const [tarefa, setTarefa] = useState('');
-  const [reset, setReset] = useState({});
 
   const addTarefa = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -26,8 +25,8 @@ export default function Formulario({ setTarefas }: SetTarefas) {
         id: uuidv4(),
       },
     ]);
-    // console.log('event', { tarefa, tempo }, reset);
-    setReset({ tarefa: '', tempo: '' });
+    setTarefa('');
+    setTempo('00:00');
   };
 
   return (
@@ -54,7 +53,7 @@ export default function Formulario({ setTarefas }: SetTarefas) {
           min="00:00:00"
           value={tempo}
           onChange={(event) => setTempo(event.target.value)}
-          max="12:30:00"
+          // max="12:30:00"
           required
         />
       </div>
